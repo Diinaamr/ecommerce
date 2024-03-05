@@ -13,26 +13,26 @@ export const appRouter=(app,express)=>{
          app.use(morgan("combined"))
     }
 // CORS
-const whitelist=['https://new-ecommerce-flax.vercel.app/']
-app.use((req,res,next)=>{
-//activate acount
-if(req.originalUrl.includes('/auth/confirmEmail'))
-{
-    res.setHeader("Access-Control-Allow-Origin","*")
-    res.setHeader("Access-Control-Allow-Methods","GET")
-    return next()
-}
+// const whitelist=['https://new-ecommerce-flax.vercel.app/']
+// app.use((req,res,next)=>{
+// //activate acount
+// if(req.originalUrl.includes('/auth/confirmEmail'))
+// {
+//     res.setHeader("Access-Control-Allow-Origin","*")
+//     res.setHeader("Access-Control-Allow-Methods","GET")
+//     return next()
+// }
 
 
-    if(!whitelist.includes(req.header("origin"))){
-        return next (new Error("blocked by cors"))
-    }
-res.setHeader("Access-Control-Allow-Origin","*")
-res.setHeader("Access-Control-Allow-Headers","*")
-res.setHeader("Access-Control-Allow-Methods","*")
-res.setHeader("Access-Control-Allow-Private-Networks",true)
-return next()
-})
+//     if(!whitelist.includes(req.header("origin"))){
+//         return next (new Error("blocked by cors"))
+//     }
+// res.setHeader("Access-Control-Allow-Origin","*")
+// res.setHeader("Access-Control-Allow-Headers","*")
+// res.setHeader("Access-Control-Allow-Methods","*")
+// res.setHeader("Access-Control-Allow-Private-Networks",true)
+// return next()
+// })
 
 app.use(express.json());
 app.use('/user',userRouter);
