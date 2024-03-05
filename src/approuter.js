@@ -13,7 +13,7 @@ export const appRouter=(app,express)=>{
          app.use(morgan("combined"))
     }
 // CORS
-const whitelist=['http://127.0.0.1:5500']
+const whitelist=['https://new-ecommerce-flax.vercel.app/']
 app.use((req,res,next)=>{
 //activate acount
 if(req.originalUrl.includes('/auth/confirmEmail'))

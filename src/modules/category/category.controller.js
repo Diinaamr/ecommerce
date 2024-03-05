@@ -73,7 +73,7 @@ const deleteCategory= await Category.findByIdAndDelete(id)
 
 //delete the subcategory that is under this category
 await Subcategory.deleteMany({categoryId:category._id})
-return res.json({success:true,message:"deleted succefully"})
+return res.json({success:true,message:"deleted succefully",test:"vercel"})
  })
 
 
