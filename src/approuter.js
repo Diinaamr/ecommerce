@@ -34,7 +34,18 @@ export const appRouter=(app,express)=>{
 // return next()
 // })
 
-app.use(express.json());
+app.use((req,res,next)=>{
+
+    //req.originalUrl>>here we find the name of the endPoint
+    if(req.originaUrl==="/order/webhook"){
+        return next()
+    }
+    express.json()(req,res,next)
+
+
+
+
+});
 app.use('/user',userRouter);
 app.use('/category',categoryRouter);
 app.use('/subcategory',subcategoryRouter);
