@@ -47,7 +47,7 @@ defaultImage:{id:public_id,url:secure_url},
 images,
 })
 console.log('product without dicount:',result.finalPrice)
-return res.json({success:true,message:"created succefully",result})
+return res.json({success:true,message:"created succefully",results:result})
 });
 
 

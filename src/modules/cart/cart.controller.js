@@ -12,7 +12,7 @@ if(!product) return next(new Error("invalid product"))
 //check stock
 // if(quantity>product.availableItems) return next (new Error(`sorry,only${product.availableItems} items left in the stock`))
 if(!product.inStock(quantity))
-return next(new Error(` we have only ${ availableItems} lefts in our store`))
+return next(new Error(` we have only ${product.availableItems} lefts in our store`))
 
 //check product existence in the cart //TODO
 const isproductInCart= await Cart.findOne({user:req.user._id,"products.productId":productId})
